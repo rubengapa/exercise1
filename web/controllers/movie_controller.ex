@@ -13,4 +13,11 @@ defmodule Ex1.MovieController do
     render  conn, "new.html"
   end
 
+  def create(conn, %{"movie" => movie}) do
+    # Save movie
+    Movies.insert(movie)
+    # Redirect to movies index again
+    redirect conn, to: movie_path(conn, :index)
+  end
+
 end
