@@ -1,0 +1,9 @@
+<div class="movie">
+  <h2><%= @movie.title %>, <%= @movie.year %></h2>
+
+  <img src="<%= @movie.cover %>">
+
+  <p><%= @movie.plot %></p>
+
+  <%= link "Back to index", to: movie_path(@conn, :index), class: "back" %>
+</div>
