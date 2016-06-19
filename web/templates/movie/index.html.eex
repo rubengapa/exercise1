@@ -1,0 +1,11 @@
+<h2>Listing movies</h2>
+
+<ul class="movies">
+  <%= for movie <- @movieList do %>
+
+    <li><%= link movie.title, to: movie_path(@conn, :show, movie.id) %></li>
+
+  <% end %>
+</ul>
+
+<%= link "Create new movie", to: movie_path(@conn, :new), class: "new-movie" %>
